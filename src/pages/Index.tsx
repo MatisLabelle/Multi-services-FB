@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { PaintBucket, Hammer, ImageIcon, Mail } from "lucide-react";
+import { PaintBucket, Hammer, ImageIcon, Mail, Brush, Wrench, LayoutGrid } from "lucide-react";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,21 +35,46 @@ const Index = () => {
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark to-secondary z-0" />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 animate-float">
+            <Brush className="w-16 h-16 text-primary transform rotate-12" />
+          </div>
+          <div className="absolute bottom-20 right-10 animate-float-delayed">
+            <Wrench className="w-16 h-16 text-primary transform -rotate-12" />
+          </div>
+          <div className="absolute top-1/2 right-1/4 animate-float">
+            <LayoutGrid className="w-12 h-12 text-primary/50" />
+          </div>
+        </div>
         <div className="container mx-auto relative z-10">
-          <div className="text-center animate-fade-up">
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary mb-4">
-              Artisan Peintre & Rénovation
+          <div className="text-center">
+            <span className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary mb-4 animate-fade-in">
+              Artisanat & Professionnalisme
             </span>
-            <h1 className="hero-title mb-6">
-              Donnez vie à vos projets <br />
-              <span className="text-primary">de rénovation</span>
+            <h1 className="hero-title mb-6 animate-fade-up">
+              <span className="text-primary font-bold text-5xl md:text-7xl block mb-2">
+                Multi Services FB
+              </span>
+              <span className="text-3xl md:text-4xl font-light block mt-4">
+                L'excellence dans la rénovation
+              </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Expertise professionnelle en peinture et rénovation pour transformer votre espace
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
+              Peinture · Rénovation · Aménagement intérieur
             </p>
-            <button className="btn-primary">
-              Contactez-moi
-            </button>
+            <div className="flex items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
+              <button className="btn-primary">
+                Contactez-moi
+              </button>
+              <a href="#projects" className="text-white hover:text-primary transition-colors px-6 py-3">
+                Voir mes projets
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center">
+            <div className="w-1 h-2 bg-primary rounded-full mt-2 animate-scroll" />
           </div>
         </div>
       </section>
